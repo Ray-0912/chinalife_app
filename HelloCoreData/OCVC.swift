@@ -30,6 +30,7 @@ class OCVC: UIViewController,UIPopoverPresentationControllerDelegate,passParamet
     var preSex : String = ""
     var preBuildDate : String = ""
     var preYear : String = ""
+    var prephone: String = ""
     
     var TheBirth : String = ""  // 從年齡的txtfield傳回來的值 yyyy/mm/dd
     var clientClass : String = "增員"
@@ -941,6 +942,35 @@ extension OCVC{
             }
         }catch{}
         
+        
+       
+        
+        do{
+            guard let context = appDel?.persistentContainer.viewContext else{ return }
+            let result = try context.fetch(Note.fetchRequest())
+            for item in result{
+                let newClient = item as? Note
+                if newClient?.clientName == clientName && newClient?.clientPhoneNumber == prephone && newClient?.clientPhoneNumber != first_phoneNumber.text {
+                    
+                    newClient?.clientPhoneNumber = first_phoneNumber.text
+
+                }else if newClient?.clientPhoneNumber == prephone && newClient?.clientPhoneNumber == first_phoneNumber.text && newClient?.clientName != clientName{
+                
+                    newClient?.clientName = clientName
+
+            }
+
+                
+            }
+            appDel?.saveContext()  //資料庫儲存
+            prephone = first_phoneNumber.text!
+
+        }catch{}
+        
+        
+        
+        
+        
         if preName != txt_name.text {
             do{
                 print("改的條件成立囉")
@@ -1038,6 +1068,7 @@ extension OCVC{
                     }
                     //first
                     first_phoneNumber.text = oldClient?.phoneNumber
+                    prephone = (oldClient?.phoneNumber)!
                     first_education.text = oldClient?.education
                     first_year.text = oldClient?.year
                     first_children.text = oldClient?.children

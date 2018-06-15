@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VIA-Qj-jRW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VIA-Qj-jRW">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="ArialBold.ttf">
-            <string>Arial-BoldMT</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--增員客戶資料-->
         <scene sceneID="qx6-aK-u9a">
@@ -28,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sO4-Ye-oHq">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.基本資料" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ua9-B0-jS9">
                                 <rect key="frame" x="292" y="371" width="139" height="21"/>
@@ -1453,9 +1448,7 @@
                     <connections>
                         <outlet property="bgimage" destination="KAG-rz-PwY" id="u4U-3W-JMM"/>
                         <outlet property="tableview" destination="7ZJ-eU-tIX" id="OGd-H6-mUw"/>
-                        <segue destination="JCW-m6-BnQ" kind="show" identifier="goDetail" id="0YB-9e-RbW">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="JCW-m6-BnQ" kind="show" identifier="goDetail" id="0YB-9e-RbW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMI-ds-BKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2604,9 +2597,7 @@
                         <outlet property="txt_strategyOthers" destination="nUq-DM-e7h" id="dLc-rx-CkX"/>
                         <outlet property="txt_work" destination="Zmd-8r-aRw" id="XtS-6x-biq"/>
                         <outlet property="txt_year" destination="cMT-Wm-Qd8" id="nXS-ky-kGp"/>
-                        <segue destination="4Bq-xu-PSB" kind="show" identifier="goNextToEnd" id="AWk-zV-tew">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="4Bq-xu-PSB" kind="show" identifier="goNextToEnd" id="AWk-zV-tew"/>
                         <segue destination="FsN-H1-bTj" kind="popoverPresentation" identifier="popover_date" popoverAnchorView="cMT-Wm-Qd8" id="O5A-fZ-JoM">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
@@ -3178,6 +3169,6 @@
         <segue reference="AWk-zV-tew"/>
         <segue reference="ZN4-nk-U7w"/>
         <segue reference="Yut-YS-7Wz"/>
-        <segue reference="piG-tG-IG4"/>
+        <segue reference="UKn-ie-Sxb"/>
     </inferredMetricsTieBreakers>
 </document>

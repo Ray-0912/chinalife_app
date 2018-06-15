@@ -47,7 +47,7 @@ class clientDetailed: UIViewController,UIPopoverPresentationControllerDelegate,p
     var passSex: String = ""
     var passBuildDate : String = ""
     var nameArr : [module] = [module]()
-    
+    var thepage_prephone: String = ""
     
     @IBOutlet weak var txt_name: UITextField!
     @IBOutlet weak var btn_reasonA: UIButton! //緣故
@@ -613,6 +613,28 @@ class clientDetailed: UIViewController,UIPopoverPresentationControllerDelegate,p
                         }
                     }catch let error as NSError{    print(error)    }
                     
+                    
+                    do{
+                        guard let context = appDel?.persistentContainer.viewContext else{ return }
+                        let result = try context.fetch(Note.fetchRequest())
+                        for item in result{
+                            let newClient = item as? Note
+                            if newClient?.clientName == preName && newClient?.clientPhoneNumber == thepage_prephone && newClient?.clientPhoneNumber != txt_phone.text {
+                                
+                                newClient?.clientPhoneNumber = txt_phone.text
+                                
+                            }else if newClient?.clientPhoneNumber == thepage_prephone && newClient?.clientPhoneNumber == txt_phone.text && newClient?.clientName != preName{
+                            
+                            newClient?.clientName = preName
+                        }
+                        }
+                        appDel?.saveContext()  //資料庫儲存
+                        thepage_prephone = txt_phone.text!
+
+                    }catch{}
+                    
+                    
+                    
                     if preName != txt_name.text {
                         do{
                             guard let context = appDel?.persistentContainer.viewContext else{ return }
@@ -901,10 +923,32 @@ class clientDetailed: UIViewController,UIPopoverPresentationControllerDelegate,p
                                     aClient?.updateStatus = 1
                                 }
                                 appDel?.saveContext()  //資料庫儲存
-                                SaveSuccessAlert()
+                                
                             }
                         }
                     }catch let error as NSError{    print(error)    }
+                    
+                    
+                    do{
+                        guard let context = appDel?.persistentContainer.viewContext else{ return }
+                        let result = try context.fetch(Note.fetchRequest())
+                        for item in result{
+                            let newClient = item as? Note
+                            if newClient?.clientName == preName && newClient?.clientPhoneNumber == thepage_prephone && newClient?.clientPhoneNumber != txt_phone.text {
+                                
+                                newClient?.clientPhoneNumber = txt_phone.text
+                                
+                            }else if newClient?.clientPhoneNumber == thepage_prephone && newClient?.clientPhoneNumber == txt_phone.text && newClient?.clientName != preName{
+                                
+                                newClient?.clientName = preName
+                            }
+                        }
+                        appDel?.saveContext()  //資料庫儲存
+                        thepage_prephone = txt_phone.text!
+                        SaveSuccessAlert()
+                    }catch{}
+                    
+                    
                     
                      //使用者去改名字時
                     if preName != txt_name.text {
@@ -1363,6 +1407,8 @@ class clientDetailed: UIViewController,UIPopoverPresentationControllerDelegate,p
                         }
                         
                         txt_phone.text = oldClient?.phone
+                        thepage_prephone = (oldClient?.phone)!
+                        
                         txt_children.text = oldClient?.children
                         txt_married.text = oldClient?.married
                         txt_motage.text = oldClient?.mortage

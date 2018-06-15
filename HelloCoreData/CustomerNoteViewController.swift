@@ -46,7 +46,7 @@ class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableVi
         
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年MM月dd日"
+        formatter.dateFormat = "yyyy年MM月dƒd日"
         preBuildDate = formatter.string(from: date)
         
         appendDataToString()
@@ -162,6 +162,7 @@ class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     
     func appendDataToString(){
+        
         let appDel = UIApplication.shared.delegate as? AppDelegate
         do{
             guard let context = appDel?.persistentContainer.viewContext  else { return }
@@ -170,6 +171,8 @@ class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableVi
                 let oldNote = item as? Note
                 if let name = oldNote?.clientName{
                     if let phone = oldNote?.clientPhoneNumber{
+                        print("prephonenumber = \(prePhoneNumber) phone = \(phone)")
+
                         if let Date = oldNote?.clientBuildDate{
                             if name == preName && phone == prePhoneNumber && oldNote?.updateStatus != 2 {
                                 creatDate.append((oldNote?.creatDate)!)
