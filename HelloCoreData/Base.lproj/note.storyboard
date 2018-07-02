@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -184,18 +185,19 @@
                                 <rect key="frame" x="46" y="282" width="676" height="717"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0MW-Fs-EGv">
-                                        <rect key="frame" x="17" y="11" width="642" height="695"/>
+                                        <rect key="frame" x="3" y="3" width="670" height="711"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="0MW-Fs-EGv" firstAttribute="height" secondItem="byi-pJ-l30" secondAttribute="height" multiplier="0.97" id="BN8-AS-R2n"/>
-                                    <constraint firstItem="0MW-Fs-EGv" firstAttribute="centerY" secondItem="byi-pJ-l30" secondAttribute="centerY" id="ehu-A7-Gqk"/>
-                                    <constraint firstItem="0MW-Fs-EGv" firstAttribute="centerX" secondItem="byi-pJ-l30" secondAttribute="centerX" id="xMZ-1w-3pL"/>
-                                    <constraint firstItem="0MW-Fs-EGv" firstAttribute="width" secondItem="byi-pJ-l30" secondAttribute="width" multiplier="0.95" id="zeS-nd-O0g"/>
+                                    <constraint firstItem="0MW-Fs-EGv" firstAttribute="leading" secondItem="byi-pJ-l30" secondAttribute="leading" constant="3" id="MLu-Px-U8H"/>
+                                    <constraint firstItem="0MW-Fs-EGv" firstAttribute="top" secondItem="byi-pJ-l30" secondAttribute="top" constant="3" id="NYU-y7-Oz8"/>
+                                    <constraint firstAttribute="trailing" secondItem="0MW-Fs-EGv" secondAttribute="trailing" constant="3" id="UTR-Eh-SB4"/>
+                                    <constraint firstAttribute="width" secondItem="byi-pJ-l30" secondAttribute="height" multiplier="676:717" id="hkK-pq-m8s"/>
+                                    <constraint firstAttribute="bottom" secondItem="0MW-Fs-EGv" secondAttribute="bottom" constant="3" id="k3N-3V-n5g"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -204,7 +206,6 @@
                             <constraint firstAttribute="trailing" secondItem="yks-Jf-lFc" secondAttribute="trailing" id="0hQ-Ak-B5o"/>
                             <constraint firstItem="byi-pJ-l30" firstAttribute="width" secondItem="Bhu-bg-3BC" secondAttribute="width" multiplier="0.88" id="4G4-Hc-Tj3"/>
                             <constraint firstItem="yks-Jf-lFc" firstAttribute="top" secondItem="Bhu-bg-3BC" secondAttribute="top" id="DUs-wJ-Uec"/>
-                            <constraint firstItem="byi-pJ-l30" firstAttribute="height" secondItem="Bhu-bg-3BC" secondAttribute="height" multiplier="0.7" id="VAP-8D-e2y"/>
                             <constraint firstItem="yks-Jf-lFc" firstAttribute="leading" secondItem="Bhu-bg-3BC" secondAttribute="leading" id="aOR-s6-hEA"/>
                             <constraint firstItem="byi-pJ-l30" firstAttribute="centerX" secondItem="Bhu-bg-3BC" secondAttribute="centerX" id="aZW-E2-9RN"/>
                             <constraint firstItem="ph8-OE-Vnp" firstAttribute="top" secondItem="byi-pJ-l30" secondAttribute="bottom" constant="25" id="tPF-PB-qqd"/>

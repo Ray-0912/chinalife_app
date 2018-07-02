@@ -17,6 +17,12 @@ extension Date {
 
 class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,reloadfirstcreat {
     
+    var judge = 0
+    var judge2 = 1
+    
+    var create_button_clicked:Bool = false
+    
+    
     @IBOutlet weak var bgimage: UIImageView!
     
     func reloadfirstcreat(boo: Bool) {
@@ -40,8 +46,33 @@ class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableVi
     
     var creatDate : [String] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        judge = 0
+        judge2 = 1
+        
+        
+        if create_button_clicked{
+        judge_if_firstcreate2()
+            if judge2 == 0 {
+                
+                
+                firstCreat = true
+                print("true")
+            }else{
+                
+                print("@@@")
+            }
+        }else{
+            
+            print("1")
+        }
+        print("the firstcreate = \(firstCreat)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewdidload")
         tableview.backgroundView =  bgimage
         
         let date = Date()
@@ -152,7 +183,23 @@ class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        print("indexPath.row = \(indexPath.row)")
+        
+        if firstCreat == true {
+            if indexPath.row != creatDate.count-1{
+                firstCreat = false
+                
+            }else{
+                
+                firstCreat = true
+            }
+        }else{
+            
+            print("@@")
+        }
         indexForRow = indexPath.row
+        
         
         performSegue(withIdentifier: "showNoteDetail", sender: nil)
         
@@ -186,12 +233,30 @@ class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     @IBOutlet weak var tableview: UITableView!
     
-    @IBAction func create(_ sender: Any) {
-        var judge = 0
-        let date = Date()
-        let formatter = DateFormatter()
+    
+    let date = Date()
+    let formatter = DateFormatter()
+    
+    
+    func judge_if_firstcreate2(){
         formatter.dateFormat = "yyyy年MM月dd日"
-        var judge2 = 1
+
+        
+        if creatDate.count > 0 {
+            for i in 0...creatDate.count-1 {
+                
+                if creatDate[i] == formatter.string(from: date) {
+                    judge2 = 0
+                    
+                }
+                
+            }
+        }
+    }
+    
+    func judge_if_firstcreate(){
+        
+        formatter.dateFormat = "yyyy年MM月dd日"
         let today = Date()
         let fformatter = DateFormatter()
         fformatter.dateFormat = "yyyy年MM月dd日"
@@ -264,14 +329,20 @@ class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableVi
         }catch{
         }
         print("judge \(judge) and 2 = \(judge2)")
+        
+    }
+    
+    
+    
+    @IBAction func create(_ sender: Any) {
+       
+        create_button_clicked = true
+        judge_if_firstcreate()
         if judge == 0 && judge2 == 0 {
             
             creatDate.append(formatter.string(from: date))
             firstCreat = true
         }
-        
-        
-        
         // creatDate.append(formatter.string(from: date))
         
         tableview.reloadData()
