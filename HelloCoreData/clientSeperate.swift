@@ -33,6 +33,7 @@ class clientSeperate: UIViewController{
     var seperate : String = ""  //分級用變數
                                 //A1，B3，C6，D10
     
+    var 增員: Bool = false
     var strForClientSP : String = ""
 
     @IBAction func cancel(_ sender: Any) {
@@ -216,7 +217,10 @@ class clientSeperate: UIViewController{
                     }
                 }
             }else if seperate == "B"{
-                forRun = 3
+                
+             
+                    forRun = 3
+                
                 for  _ in 1...6{
                     if (EKEventStore.authorizationStatus(for: .event) != EKAuthorizationStatus.authorized) {
                         eventStore.requestAccess(to: .event, completion: {
@@ -241,7 +245,17 @@ class clientSeperate: UIViewController{
                     }
                 }
             }else if seperate == "C"{
-                forRun = 6
+                if strForClientSP == "增員"{
+                    
+                    forRun = 12
+
+                }else{
+                    
+                    
+                    forRun = 6
+
+                    
+                }
                 for  _ in 1...6{
                     if (EKEventStore.authorizationStatus(for: .event) != EKAuthorizationStatus.authorized) {
                         eventStore.requestAccess(to: .event, completion: {
@@ -266,6 +280,10 @@ class clientSeperate: UIViewController{
                     }
                 }
             }else if seperate == "D"{
+                
+                if strForClientSP == "增員"{
+                    
+                }else{
                 forRun = 10
                 for  _ in 1...6{
                     if (EKEventStore.authorizationStatus(for: .event) != EKAuthorizationStatus.authorized) {
@@ -291,6 +309,7 @@ class clientSeperate: UIViewController{
                     }
                 }
             }
+        }
         
         }
         print("hello?")
@@ -330,9 +349,26 @@ class clientSeperate: UIViewController{
         }
     }
     
-    
+    @IBOutlet weak var 不分級: UILabel!
+    @IBOutlet weak var 分級D: UILabel!
+    @IBOutlet weak var 分級C: UILabel!
+    @IBOutlet weak var 分級B: UILabel!
+    @IBOutlet weak var 分級A: UILabel!
     
     override func viewDidLoad() {
+        if strForClientSP == "增員"{
+            分級A.text = "1"
+            分級B.text = "2"
+            分級C.text = "3"
+            分級D.text = "不分級"
+            不分級.text = ""
+
+            btn_seperateNo.isHidden = true
+        }else{
+            
+            btn_seperateNo.isHidden = false
+
+        }
         
         print("clientclass = \(clientClass)")
     }
