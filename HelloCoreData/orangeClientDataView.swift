@@ -208,7 +208,7 @@ class orangeClientDataView: UIViewController, UITabBarDelegate {
                 vc.passSex = searchArr[index].sex
                 vc.passBuildDate = searchArr[index].buildDate
                 vc.preYear = searchArr[index].year
-            
+                self.searchController.isActive = false
             }else{
                 
                 vc.passName = nameArr[index].name

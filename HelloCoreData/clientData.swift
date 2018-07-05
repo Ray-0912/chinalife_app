@@ -109,6 +109,7 @@ class clientData: UIViewController, UITabBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goDetail" {
             
+            
             //讓clientDetailed等於vc 
             //此時使用"vc.參數" 可以叫出clientDetailed的參數，進一步assign值
             let vc = segue.destination as! clientDetailed
@@ -128,7 +129,7 @@ class clientData: UIViewController, UITabBarDelegate {
                 vc.passBuildDate = searchArr[index].buildDate
                 vc.preYear = searchArr[index].year
                 print("搜尋already pass passname = \(searchArr[index].name)")
-                
+                self.searchController.isActive = false
             }else{
                 vc.passSex = nameArr[index].sex
                 vc.passBuildDate = nameArr[index].buildDate
@@ -187,8 +188,9 @@ class clientData: UIViewController, UITabBarDelegate {
        
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-         searchController.dismiss(animated: true, completion: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+//        searchController.dismiss(animated: true, completion: nil)
+
     }
     
     override func didReceiveMemoryWarning() {
