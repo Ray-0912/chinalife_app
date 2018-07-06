@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wGh-4I-XCb">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xSh-WK-y62">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wGh-4I-XCb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Bl-QJ-J5G">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UMA-fj-jfr" kind="relationship" relationship="rootViewController" id="4C0-Ds-euS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZv-rm-w5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496" y="-144"/>
+        </scene>
+        <!--Client Seperate-->
+        <scene sceneID="J95-JF-Scw">
+            <objects>
+                <viewController id="UMA-fj-jfr" customClass="clientSeperate" customModule="HelloCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9MB-Xq-N8T"/>
+                        <viewControllerLayoutGuide type="bottom" id="67i-SV-lWL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8EH-NU-oJT">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Req-W2-95V">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZRN-k3-j5l">
+                                <rect key="frame" x="238" y="178" width="348.5" height="32.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-ov-Cug">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="checkbox.png"/>
+                                        <connections>
+                                            <action selector="btn_seperate:" destination="UMA-fj-jfr" eventType="touchUpInside" id="4JT-K7-lDl"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYz-KC-v6V">
+                                        <rect key="frame" x="42" y="6" width="12" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdk-4u-KnR">
+                                        <rect key="frame" x="64" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="checkbox.png"/>
+                                        <connections>
+                                            <action selector="btn_seperate:" destination="UMA-fj-jfr" eventType="touchUpInside" id="mJP-ew-Nq7"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffg-wm-pQy">
+                                        <rect key="frame" x="106" y="6" width="11" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRO-bw-Ewf">
+                                        <rect key="frame" x="126" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="checkbox.png"/>
+                                        <connections>
+                                            <action selector="btn_seperate:" destination="UMA-fj-jfr" eventType="touchUpInside" id="U1K-bw-NAs"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odo-pl-GpN">
+                                        <rect key="frame" x="168" y="6" width="12" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03A-UC-N4u">
+                                        <rect key="frame" x="191" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="checkbox.png"/>
+                                        <connections>
+                                            <action selector="btn_seperate:" destination="UMA-fj-jfr" eventType="touchUpInside" id="AY7-cN-jIl"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-JY-sqz">
+                                        <rect key="frame" x="232" y="6" width="12" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhC-Pz-KKj">
+                                        <rect key="frame" x="255" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="checkbox.png"/>
+                                        <connections>
+                                            <action selector="btn_seperate:" destination="UMA-fj-jfr" eventType="touchUpInside" id="2ws-XB-sdS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="不分級" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNo-vJ-Wuu">
+                                        <rect key="frame" x="297" y="6" width="52" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="第一次會面時間訂為：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqr-VN-Tlo">
+                                <rect key="frame" x="256" y="279" width="257" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="brc-SJ-MbK">
+                                <rect key="frame" x="14" y="404" width="768" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="508667458.97959203">
+                                    <!--2017-02-13 08:30:58 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="zh_TW"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="客戶為：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTA-Wp-PwX">
+                                <rect key="frame" x="345" y="107" width="107" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1o-lI-4WB">
+                                <rect key="frame" x="291" y="726" width="187" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="確定建立"/>
+                                <connections>
+                                    <action selector="check:" destination="UMA-fj-jfr" eventType="touchUpInside" id="joY-7o-Foy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZB-tg-h8Z">
+                                <rect key="frame" x="369" y="867" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="取消"/>
+                                <connections>
+                                    <action selector="cancel:" destination="UMA-fj-jfr" eventType="touchUpInside" id="5FP-dU-0vp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91780326700000003" green="0.80729130579999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Req-W2-95V" firstAttribute="leading" secondItem="8EH-NU-oJT" secondAttribute="leading" id="WI7-Mr-GJO"/>
+                            <constraint firstItem="Req-W2-95V" firstAttribute="top" secondItem="8EH-NU-oJT" secondAttribute="top" id="hJi-WJ-JHs"/>
+                            <constraint firstAttribute="trailing" secondItem="Req-W2-95V" secondAttribute="trailing" id="kdx-U8-Ghp"/>
+                            <constraint firstItem="67i-SV-lWL" firstAttribute="top" secondItem="Req-W2-95V" secondAttribute="bottom" id="mnk-5C-uPy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N7D-AW-XNA"/>
+                    <connections>
+                        <outlet property="btn_seperateA" destination="AfF-ov-Cug" id="hDS-WK-4EA"/>
+                        <outlet property="btn_seperateB" destination="xdk-4u-KnR" id="5b0-9Y-dxB"/>
+                        <outlet property="btn_seperateC" destination="aRO-bw-Ewf" id="O2J-UP-66D"/>
+                        <outlet property="btn_seperateD" destination="03A-UC-N4u" id="CGD-4l-j8t"/>
+                        <outlet property="btn_seperateNo" destination="fhC-Pz-KKj" id="yHa-kM-pAM"/>
+                        <outlet property="datePicker" destination="brc-SJ-MbK" id="uIT-Oy-PPd"/>
+                        <outlet property="不分級" destination="aNo-vJ-Wuu" id="DvM-6f-A7R"/>
+                        <outlet property="分級A" destination="dYz-KC-v6V" id="lpi-iY-9sC"/>
+                        <outlet property="分級B" destination="Ffg-wm-pQy" id="zLT-Gj-svh"/>
+                        <outlet property="分級C" destination="odo-pl-GpN" id="idy-ah-kQw"/>
+                        <outlet property="分級D" destination="cxo-JY-sqz" id="iIy-JS-2Tw"/>
+                        <segue destination="WEI-RU-Hui" kind="show" identifier="home" id="Sxy-Ib-SaW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKq-SG-9Xw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217.96875" y="-144.140625"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="4Td-vh-wwP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="WEI-RU-Hui" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feg-ss-QIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="388"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkbox.png" width="32" height="32"/>
+        <image name="背景1.jpg" width="1018" height="988"/>
+    </resources>
+</document>

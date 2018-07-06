@@ -954,9 +954,9 @@ extension OCVC{
                     
                     newClient?.clientPhoneNumber = first_phoneNumber.text
 
-                }else if newClient?.clientPhoneNumber == prephone && newClient?.clientPhoneNumber == first_phoneNumber.text && newClient?.clientName != clientName{
+                }else if newClient?.clientPhoneNumber == prephone && newClient?.clientPhoneNumber == first_phoneNumber.text && newClient?.clientName == clientName && clientName != txt_name.text!{
                 
-                    newClient?.clientName = clientName
+                    newClient?.clientName = txt_name.text!
 
             }
 

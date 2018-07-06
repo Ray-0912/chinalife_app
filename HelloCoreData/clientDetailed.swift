@@ -619,13 +619,13 @@ class clientDetailed: UIViewController,UIPopoverPresentationControllerDelegate,p
                         let result = try context.fetch(Note.fetchRequest())
                         for item in result{
                             let newClient = item as? Note
-                            if newClient?.clientName == preName && newClient?.clientPhoneNumber == thepage_prephone && newClient?.clientPhoneNumber != txt_phone.text {
+                            if newClient?.clientName! == preName && newClient?.clientPhoneNumber! == thepage_prephone && newClient?.clientPhoneNumber! != txt_phone.text {
                                 
                                 newClient?.clientPhoneNumber = txt_phone.text
                                 
-                            }else if newClient?.clientPhoneNumber == thepage_prephone && newClient?.clientPhoneNumber == txt_phone.text && newClient?.clientName != preName{
+                            }else if newClient?.clientPhoneNumber! == thepage_prephone && newClient?.clientPhoneNumber! == txt_phone.text && newClient?.clientName! == preName && txt_name.text! != preName{
                             
-                            newClient?.clientName = preName
+                            newClient?.clientName = txt_name.text!
                         }
                         }
                         appDel?.saveContext()  //資料庫儲存
@@ -934,13 +934,14 @@ class clientDetailed: UIViewController,UIPopoverPresentationControllerDelegate,p
                         let result = try context.fetch(Note.fetchRequest())
                         for item in result{
                             let newClient = item as? Note
-                            if newClient?.clientName == preName && newClient?.clientPhoneNumber == thepage_prephone && newClient?.clientPhoneNumber != txt_phone.text {
+                            if newClient?.clientName! == preName && newClient?.clientPhoneNumber! == thepage_prephone && newClient?.clientPhoneNumber! != txt_phone.text {
                                 
                                 newClient?.clientPhoneNumber = txt_phone.text
                                 
-                            }else if newClient?.clientPhoneNumber == thepage_prephone && newClient?.clientPhoneNumber == txt_phone.text && newClient?.clientName != preName{
+                            }else if newClient?.clientPhoneNumber! == thepage_prephone && newClient?.clientPhoneNumber! == txt_phone.text! && newClient?.clientName! == preName && preName != txt_name.text!{
                                 
-                                newClient?.clientName = preName
+                                print("txt_phone = \(txt_phone.text!)newClient?.clientPhoneNumber = \(newClient?.clientPhoneNumber) txt_name = \(txt_name.text!) newClient?.clientName  = \(newClient?.clientName) prename = \(preName) " )
+                                newClient?.clientName = txt_name.text!
                             }
                         }
                         appDel?.saveContext()  //資料庫儲存

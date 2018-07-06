@@ -222,6 +222,9 @@ class CustomerNoteViewController: UIViewController,UITableViewDelegate,UITableVi
 
                         if let Date = oldNote?.clientBuildDate{
                             if name == preName && phone == prePhoneNumber && oldNote?.updateStatus != 2 {
+                                
+                                print("name = \(name) prename = \(preName) phone = \(phone) prePhoneNumber = \(prePhoneNumber) ")
+                                
                                 creatDate.append((oldNote?.creatDate)!)
                             }
                         }
